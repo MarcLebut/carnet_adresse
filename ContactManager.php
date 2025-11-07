@@ -108,7 +108,7 @@ class ContactManager
      */
     public function create($name, $email, $phone_number)
     {
-        // 1) Récupérer PDO.
+        // 1) Je récupère mon PDO
         $pdo = $this->db->getPDO();
 
         // 2) Requête paramétrée d’insertion.
@@ -167,18 +167,16 @@ class ContactManager
      */
     public function update($id, $name, $email, $phone_number)
     {
+        // 1) Je récupère mon PDO
         $pdo = $this->db->getPDO();
-        if ($pdo === null) {
-            return null;
-        }
 
-        // 1) Vérifier que le contact existe
+        // 2) Vérifier que le contact existe
         $existant = $this->findById($id);
         if ($existant === null) {
             return null; // rien à mettre à jour
         }
 
-        // 2) Mettre à jour
+        // 3) Mettre à jour
         $sql = "UPDATE contact
                 SET name = :name, email = :email, phone_number = :phone
                 WHERE id = :id";
@@ -191,7 +189,7 @@ class ContactManager
             ':id'    => $id,
         ]);
 
-        // 3) Relire et renvoyer l’objet à jour
+        // 4) Relire et renvoyer l’objet à jour
         return $this->findById($id);
     }
 }

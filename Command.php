@@ -28,7 +28,7 @@ class Command
         // Je récupère les objets Contact
         $contacts = $manager->findAll();
 
-        // Si la liste est vide, je le dis simplement
+        // Si la liste est vide, je le dis simplement 
         if (!$contacts) {
             echo "Aucun contact.\n";
             return;

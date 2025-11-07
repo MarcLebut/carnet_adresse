@@ -36,18 +36,42 @@ class Contact
     // =======================
     // Getters
     // =======================
-    public function getId(): ?int        { return $this->id; }
-    public function getName(): ?string   { return $this->name; }
-    public function getEmail(): ?string  { return $this->email; }
-    public function getPhoneNumber(): ?string { return $this->phone_number; }
+    public function getId(): ?int
+    {
+        return $this->id;
+    }
+    public function getName(): ?string
+    {
+        return $this->name;
+    }
+    public function getEmail(): ?string
+    {
+        return $this->email;
+    }
+    public function getPhoneNumber(): ?string
+    {
+        return $this->phone_number;
+    }
 
     // =======================
     // Setters
     // =======================
-    public function setId(?int $id): void                { $this->id = $id; }
-    public function setName(?string $name): void         { $this->name = $name; }
-    public function setEmail(?string $email): void       { $this->email = $email; }
-    public function setPhoneNumber(?string $phone): void { $this->phone_number = $phone; }
+    public function setId(?int $id): void
+    {
+        $this->id = $id;
+    }
+    public function setName(?string $name): void
+    {
+        $this->name = $name;
+    }
+    public function setEmail(?string $email): void
+    {
+        $this->email = $email;
+    }
+    public function setPhoneNumber(?string $phone): void
+    {
+        $this->phone_number = $phone;
+    }
 
     // =======================
     // Affichage
@@ -59,10 +83,11 @@ class Contact
      */
     public function toString(): string
     {
-        $id    = $this->id !== null ? (string)$this->id : 'null';
-        $name  = $this->name ?? '';
+        $id = $this->id !== null ? (string) $this->id : 'null';
+        $name = $this->name ?? '';
         $email = $this->email ?? '';
         $phone = $this->phone_number ?? '';
+        
         return "{$id} | {$name} | {$email} | {$phone}";
     }
 
